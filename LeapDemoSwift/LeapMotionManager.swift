@@ -16,6 +16,9 @@ class LeapMotionManager: NSObject, LeapDelegate {
     var rightHandPosition = LeapVector()
     var leftHandPosition = LeapVector()
     
+    var leftPinchStrength = 0.0
+    var rightPinchStrength = 0.0
+    
     func run() {
         controller?.addDelegate(self)
         print("running")
@@ -57,10 +60,12 @@ class LeapMotionManager: NSObject, LeapDelegate {
         for hand in hands {
             if hand.isLeft {
                 leftHandPosition = hand.palmPosition
-                print("left hand position: \(leftHandPosition)")
+                leftPinchStrength = Double(hand.pinchStrength)
+                print("left hand pinch strength: \(leftPinchStrength)")
             } else if hand.isRight {
                 rightHandPosition = hand.palmPosition
-                print("right hand position: \(rightHandPosition)")
+                rightPinchStrength = Double(hand.pinchStrength)
+                print("right hand pinch strength: \(rightPinchStrength)")
             }
         }
     }
