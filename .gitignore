@@ -1,7 +1,2 @@
-Leap.h
-LeapMath.h
-LeapObjectiveC.h
-LeapObjectiveC.mm
-libLeap.dylib
-
 LeapDemoSwift.xcodeproj/project.xcworkspace/xcuserdata
+LeapDemoSwift/LeapObjCSDK/.DS_Store
